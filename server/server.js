@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 let bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(cors());
 
 process.on('unhandledRejection', error => {
   console.error('unhandledRejection', JSON.stringify(error), error.stack);

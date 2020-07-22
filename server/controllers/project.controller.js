@@ -35,6 +35,7 @@ class ProjectsController {
         start_date: p.start_date,
         delivery_date: p.delivery_date,
         description: p.description,
+        link: p.link,
       }));
       res.send({ data });
     } catch (err) {

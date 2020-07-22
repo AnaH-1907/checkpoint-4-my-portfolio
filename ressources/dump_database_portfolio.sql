@@ -12,3 +12,5 @@ CREATE TABLE `projects` (
   `description` TEXT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `projects` ADD link VARCHAR(255) NULL;
