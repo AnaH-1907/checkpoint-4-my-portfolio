@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import API from '../services/API';
 import '../styles/EditProject.css';
+import moment from 'moment';
 
 const EditProject = () => {
   const { id } = useParams();
@@ -22,7 +23,9 @@ const EditProject = () => {
     if (editMode) {
       API.get(`/project/${id}`)
         .then(res => {
-          setData(res.data.data);
+          const start_date = moment(res.data.data.start_date).format('yyyy-MM-DD'); //eslint-disable-line
+          const delivery_date = moment(res.data.data.delivery_date).format('yyyy-MM-DD'); //eslint-disable-line
+          setData({...res.data.data, start_date, delivery_date});
         })
         .catch(err => {
           console.log(err);
@@ -114,7 +117,7 @@ const EditProject = () => {
                 type='text'
                 name='start_date'
                 minLength='3'
-                value={data.start_date}
+                value={moment(data.start_date).format('yyyy-MM-DD')}
                 placeholder='Ajouter une date de lancement'
                 onChange={(e) => handleChange(e)}
                 required
@@ -125,7 +128,7 @@ const EditProject = () => {
                 type='text'
                 name='delivery_date'
                 minLength='3'
-                value={data.delivery_date}
+                value={moment(data.delivery_date).format('yyyy-MM-DD')}
                 placeholder='Ajouter une date de livraison'
                 onChange={(e) => handleChange(e)}
               />
