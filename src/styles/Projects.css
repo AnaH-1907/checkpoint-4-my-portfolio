@@ -39,3 +39,38 @@
   text-justify: auto;
   text-align: center;
 }
+
+@media only screen and (max-width: 1400px){
+  .project-text-container{
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .card{
+    width: 10rem;
+  }
+
+  .project-text-container{
+    font-size: 12px;
+  }
+
+  .title{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .card{
+    width: 10rem;
+  }
+
+  .project-text-container{
+    font-size: 10px;
+    padding: 5%;
+  }
+
+  .title{
+    font-size: 20px;
+  }
+}

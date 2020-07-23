@@ -13,6 +13,7 @@
   align-items: center;
   flex-direction: column;
   height: 44em;
+  border-radius: 5px;
 }
 
 .tableau-1{
@@ -95,4 +96,10 @@ td, th {
 		white-space: nowrap;
   }
 
+}
+
+@media only screen and (max-width: 1400px){
+  .admin-text-container{
+    width: auto;
+  }
 }
