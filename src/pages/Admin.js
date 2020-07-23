@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import API from '../services/API';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Admin.css'
 import moment from 'moment';
 import '../styles/EditProject.css';
