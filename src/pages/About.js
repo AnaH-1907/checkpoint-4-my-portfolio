@@ -1,12 +1,14 @@
 import React from 'react';
-// import '../Styles/About.css';
+import '../styles/About.css';
 
 function About () {
   return (
-    <>
-      <h1>À propos de moi</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
-    </>
+    <div className='about-container'>
+      <div className='about-text-container'>
+        <h1 className='title'>À propos de moi</h1>
+        <p>Après 5 ans passés à l'accueil je décide de changer de voix et je me lance dans une formation de développeur web en Mars 2020. Cette formation me passionne et me donne, en plus de compétences techniques, le goût du challenge. De mon précédent métier j'ai gardé le goût du contact et de la satisfaction client. Alors si vous avez un projet, n'hésitez pas à me contacter par e-mail, je serais ravie de pouvoir échanger avec vous.</p>
+      </div>
+    </div>
   );
 }
 

@@ -1,7 +1,8 @@
-.mainContainer {
-  background-image:url(../images/background.jpg);
-  }
-
-h1, p {
-  color:white;
+.main-container{
+  background:url(https://i.imgur.com/TD9OMpA.jpg);
+  background-repeat: no-repeat;
+  padding:15px;
+  height: 100vh;
+  width: auto;
+  background-size: cover;
 }

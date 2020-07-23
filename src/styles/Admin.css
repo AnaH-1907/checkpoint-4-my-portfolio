@@ -1,0 +1,98 @@
+.admin-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.admin-text-container{
+  font-weight: bold;
+  text-justify: auto;
+  color:black;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 44em;
+}
+
+.tableau-1{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.title{
+  font-weight: bold;
+  color:black;
+}
+
+.img-logo{
+  width: 40%;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: transparent; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  text-align: center;
+  width: 20%;
+}
+
+.edit-icon {
+  font-size: 24px;
+  color: black;
+}
+
+.delete-icon {
+  font-size: 24px;
+  color: black;
+}
+
+@media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+  display: block; 
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+  }
+
+}

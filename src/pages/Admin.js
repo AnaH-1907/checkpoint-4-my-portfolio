@@ -3,6 +3,9 @@ import { Link, useHistory } from 'react-router-dom';
 import API from '../services/API';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import 'react-toastify/dist/ReactToastify.css';
+import '../styles/Admin.css'
+import moment from 'moment';
+import '../styles/EditProject.css';
 
 const Admin = () => {
   const history = useHistory();
@@ -31,50 +34,49 @@ const Admin = () => {
       });
   }, []); // eslint-disable-line
 
-
   return (
-    <>
-      <div style={{ paddingTop: '20px' }}>
-        <Link to='/admin/edit/new'>
-          <button className='form-button'>Ajouter</button>
-        </Link>
-      </div>
+    <div className='admin-container'>
+      <div className='admin-text-container'>
+        <div style={{ paddingTop: '20px' }}>
+          <Link to='/admin/edit/new'>
+            <button type="button" className="btn btn-dark">Ajouter</button>
+          </Link>
+        </div>
 
-      <br />
-      <table className='render-list'>
-        <thead>
-          <tr>
-            <td>Nom</td>
-            <td>logo</td>
-            <td>client</td>
-            <td>date de début</td>
-            <td>date de livraison</td>
-            <td>description</td>
-            <td>lien déployé</td>
-            <td>Actions</td>
-          </tr>
-        </thead>
-        <tbody>
-          {projects.map(p => {
-            return (
-              <tr key={p.id}>
-                <td>{p.name}</td>
-                <td>{p.logo}</td>
-                <td>{p.client} </td>
-                <td>{p.start_date} </td>
-                <td>{p.delivery_date} </td>
-                <td>{p.description} </td>
-                <td>{p.link} </td>
-                <td>
-                  <EditOutlined className='edit-icon' onClick={() => history.push(`/admin/edit/${p.id}`)} />
-                  <DeleteOutlined className='delete-icon' onClick={() => handleDelete(p.id)} />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </>
+        <br />
+        <table className='render-list'>
+          <thead>
+            <tr className='tableau-1'>
+              <td className='tableau-1'>Nom</td>
+              <td className='img-logo tableau-1'>logo</td>
+              <td className='tableau-1'>client</td>
+              <td className='tableau-1'>date de début</td>
+              <td className='tableau-1'>date de livraison</td>
+              <td className='tableau-1'>lien déployé</td>
+              <td className='tableau-1'>Actions</td>
+            </tr>
+          </thead>
+          <tbody>
+            {projects.map(p => {
+              return (
+                <tr key={p.id}>
+                  <td>{p.name}</td>
+                  <td><img className='img-logo' src={p.logo} alt={p.name} /></td>
+                  <td>{p.client} </td>
+                  <td>{moment(p.start_date).format('LL')}</td>
+                  <td>{moment(p.delivery_date).format('LL')}</td>
+                  <td><a href={p.link}>{p.link}</a></td>
+                  <td>
+                    <EditOutlined className='edit-icon' onClick={() => history.push(`/admin/edit/${p.id}`)} />
+                    <DeleteOutlined className='delete-icon' onClick={() => handleDelete(p.id)} />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 export default Admin;

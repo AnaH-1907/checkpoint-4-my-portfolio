@@ -1,11 +1,11 @@
 import React from 'react';
-// import '../styles/Navbar.css';
+import '../styles/Navbar.css';
 import { NavLink } from 'react-router-dom';
 
 export default function NavBar () {
   return (
     <div>
-      <nav className='navbar navbar-expand-lg navbar-light d-flex'>
+      <nav className='navbar navbar-expand-lg navbar-dark d-flex'>
         {/* C'est le bouton burger (navbar-toggler) */}
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon' />

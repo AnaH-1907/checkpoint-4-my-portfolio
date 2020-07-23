@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import '../Styles/Projects.css';
+import '../styles/Projects.css';
 import API from '../services/API';
 
 function Projects () {
@@ -16,20 +16,25 @@ function Projects () {
     ]);
   }, []); // eslint-disable-line
 
+
   return (
-    <>
-      <h1>Mes projets</h1>
-      <div>
-        {projects && projects.map(p => {
-          return (
-            <div key={p.id}>
-              <a title={p.name} href={p.link}><img alt='projet' src={p.logo} /></a>
-              <p>{p.description}</p>
-            </div>
-          );
-        })}
+    <div className='project-container'>
+      <div className='project-text-container'>
+        <h1 className='title'>Mes projets</h1>
+        <div className='cards-container'>
+          {projects && projects.map(p => {
+            return (
+              <div key={p.id} className='card'>
+                <a title={p.name} href={p.link} target="_blank"><img className='card-img-top' alt='projet' src={p.logo} /></a>
+                <div className='card-body'>
+                  <p className='card-text'>{p.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

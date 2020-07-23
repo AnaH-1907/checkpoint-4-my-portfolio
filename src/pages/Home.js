@@ -1,12 +1,14 @@
 import React from 'react';
-// import '../Styles/Home.css';
+import '../styles/Home.css';
 
 function Home () {
   return (
-    <>
-      <h1>Anaïs Huoch</h1>
-      <p>développeuse full stack</p>
-    </>
+    <div className='Home-container'>
+      <div className='Home-text-container'>
+        <h1 className='title'>Anaïs Huoch</h1>
+        <p>développeuse full stack</p>
+      </div>
+    </div>
   );
 }
 

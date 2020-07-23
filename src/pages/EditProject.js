@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import API from '../services/API';
+import '../styles/EditProject.css';
 
 const EditProject = () => {
   const { id } = useParams();
@@ -64,6 +65,7 @@ const EditProject = () => {
         <form className='editor-form-center' onSubmit={(e) => handleSubmit(e)}>
           <div className='editor-group'>
             <div className='editor-form-input-container'>
+              <label>Nom du projet</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -74,6 +76,7 @@ const EditProject = () => {
                 onChange={(e) => handleChange(e)}
                 required
               />
+              <label>Logo du projet</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -83,6 +86,7 @@ const EditProject = () => {
                 placeholder='Ajouter un logo'
                 onChange={(e) => handleChange(e)}
               />
+              <label>Nom du client</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -93,6 +97,18 @@ const EditProject = () => {
                 onChange={(e) => handleChange(e)}
                 required
               />
+              <label>description du projet</label>
+              <input
+                className='editor-form-input'
+                type='text'
+                name='description'
+                minLength='3'
+                value={data.description}
+                placeholder='Ajouter une description'
+                onChange={(e) => handleChange(e)}
+                required
+              />
+              <label>Date de début de projet</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -103,6 +119,7 @@ const EditProject = () => {
                 onChange={(e) => handleChange(e)}
                 required
               />
+              <label>Date de fin de projet</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -111,8 +128,8 @@ const EditProject = () => {
                 value={data.delivery_date}
                 placeholder='Ajouter une date de livraison'
                 onChange={(e) => handleChange(e)}
-                required
               />
+              <label>Lien vers le site déployé</label>
               <input
                 className='editor-form-input'
                 type='text'
@@ -121,10 +138,9 @@ const EditProject = () => {
                 value={data.link}
                 placeholder='Ajouter un lien de déploiement'
                 onChange={(e) => handleChange(e)}
-                required
               />
             </div>
-              <button type='submit' className='btn'>{editMode ? 'Modifier' : 'Ajouter'}</button>
+              <button type='submit' className="btn btn-dark">{editMode ? 'Modifier' : 'Ajouter'}</button>
             </div>
         </form>
       </main>
